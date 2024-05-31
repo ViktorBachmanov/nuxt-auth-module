@@ -1,10 +1,14 @@
 {
-  "name": "my-module",
+  "name": "@vbachm/nuxt-auth-module",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "Nuxt auth module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbachm/nuxt-auth-module.git"
+  },
   "license": "MIT",
   "type": "module",
+  "private": false,
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
