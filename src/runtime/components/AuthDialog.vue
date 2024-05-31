@@ -1,6 +1,9 @@
 <script setup>
+import { ref } from 'vue'
 
 const authDialog = useAuthDialog()
+
+const loading = ref(false)
    
 const dialogs = {
   loginDialog: {
@@ -70,19 +73,18 @@ function handleClose() {
         </header>
 
         <button 
-          class="absolute top-0 right-0 w-[3em] h-[3em] flex items-center justify-center rounded-full"
+          class="absolute top-0 right-0 w-[3em] h-[3em] flex items-center justify-center rounded-full text-[#D0D3D5]"
           @click="handleClose"
         >
-          <IconX class="text-[#D0D3D5]" />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
         </button>
 
         <Transition mode="out-in">
           <component 
             :is="dialogs[authDialog].comp" 
-            @close="handleClose" 
             @go-to-register="handleRegister"
-            @go-to-forget-email="handleGetForgetEmail"
-            @go-to-login="handleLogin"
             v-model="loading"
           /> 
         </Transition>  

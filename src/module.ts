@@ -4,6 +4,7 @@ import {
   createResolver,
   addComponent,
   addComponentsDir,
+  addImportsDir,
 } from "@nuxt/kit";
 
 // Module options TypeScript interface definition
@@ -38,5 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
       export: "VBCheckbox", // (optional) if the component is a named (rather than default) export
       filePath: "vue-lib-vb-1",
     });
+
+    addImportsDir(resolver.resolve("runtime/composables"));
   },
 });
