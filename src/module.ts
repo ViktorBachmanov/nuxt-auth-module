@@ -41,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: "vue-lib-vb-1",
     });
 
-    await installModule("@pinia/nuxt");
+    // await installModule("@pinia/nuxt");
 
     // addImportsDir(resolver.resolve("runtime/composables"));
     addImportsDir(resolver.resolve("runtime/stores"));
