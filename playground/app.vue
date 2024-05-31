@@ -1,5 +1,5 @@
 <script setup>
-// import { useNuxtApp } from '#app'
+import { useAuthStore } from '#imports'
 
 const authDialog = useAuthStore()
 
