@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-import { useNuxtApp } from '#app'
+// import 
+// import { useNuxtApp } from '#app'
 
-const { $setAuthDialog, $getAuthDialog } = useNuxtApp()
+// const { $setAuthDialog, $getAuthDialog } = useNuxtApp()
 
-const authDialog = $getAuthDialog()
+// const authDialog = $getAuthDialog()
+const authDialog = useAuthStore()
 
 const loading = ref(false)
    
@@ -32,22 +34,22 @@ const dialogs = {
 }
 
 function handleRegister() {
-  $setAuthDialog('registerDialog')
+  authDialog.value = 'registerDialog'
 }
 
 function handleGetForgetEmail() {
-  $setAuthDialog('forgetEmailDialog')
+  authDialog.value = 'forgetEmailDialog'
 }
 
 function handleLogin() {
-  $setAuthDialog('loginDialog')
+  authDialog.value = 'loginDialog'
 }
 
 function handleClose() {
   // removeEventListener('keyup', escape)
   // backing.value.style.opacity = 0
   // setTimeout(() => {
-    $setAuthDialog('')
+    authDialog.value = ''
   // }, 500)
 }
 
@@ -63,7 +65,7 @@ function handleClose() {
 <template>
   <Transition>
     <div 
-      v-if="authDialog"
+      v-if="authDialog.value"
       class="fixed inset-0 bg-gray-500/50 flex items-center justify-center"
       style="z-index: 51"
     >
@@ -72,7 +74,7 @@ function handleClose() {
         class="relative bg-white dark:bg-slate-800 rounded-[1.5em] px-4 py-9 sm:px-[100px] w-[580px] max-w-[100vw] max-h-[100vh]" 
       >
         <header class="font-semibold text-2xl">
-          {{ dialogs[authDialog].title }}
+          {{ dialogs[authDialog.value].title }}
         </header>
 
         <button 
@@ -86,7 +88,7 @@ function handleClose() {
 
         <Transition mode="out-in">
           <component 
-            :is="dialogs[authDialog].comp" 
+            :is="dialogs[authDialog.value].comp" 
             @go-to-register="handleRegister"
             v-model="loading"
           /> 

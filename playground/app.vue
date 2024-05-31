@@ -1,11 +1,15 @@
 <script setup>
-import { useNuxtApp } from '#app'
+// import { useNuxtApp } from '#app'
+
+const authDialog = useAuthStore()
+
 
 function openAuthDialog() {
   // useAuthDialog().value = 'loginDialog'
-  const { $setAuthDialog } = useNuxtApp()
+  // const { $setAuthDialog } = useNuxtApp()
 
-  $setAuthDialog('loginDialog')
+  // $setAuthDialog('loginDialog')
+  authDialog.value = 'loginDialog'
 }
 
 function handleToggleTheme() {
