@@ -1,5 +1,6 @@
 <script setup>
 import { useAuthStore } from '#imports'
+import { backendFetch, backendFetchXSRF } from '#imports'
 
 const authDialog = useAuthStore()
 
@@ -11,6 +12,10 @@ function openAuthDialog() {
 function handleToggleTheme() {
   // const documentEl = document?.documentElement.classList.add(ThemeVal.Dark)
   document?.documentElement.classList.toggle('dark')
+}
+
+async function handleTestRequest() {
+  await backendFetch('/api/reset-password-preview')
 }
 </script>
 
@@ -34,6 +39,15 @@ function handleToggleTheme() {
     @click="handleToggleTheme"
   >
     Toggle theme
+  </button>
+
+  <br>
+
+  <button
+    @click="handleTestRequest"
+    class="m-10"
+  >
+    Test request
   </button>
 </template>
 
