@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import { useNuxtApp } from '#app'
 
 const { $setAuthDialog } = useNuxtApp()
 

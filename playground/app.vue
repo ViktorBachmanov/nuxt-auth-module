@@ -1,4 +1,5 @@
 <script setup>
+import { useNuxtApp } from '#app'
 
 function openAuthDialog() {
   // useAuthDialog().value = 'loginDialog'
