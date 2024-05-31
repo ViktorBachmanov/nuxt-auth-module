@@ -10,6 +10,7 @@ export default defineNuxtPlugin((_nuxtApp) => {
       setAuthDialog: (dialogName: string) => {
         authDialog.value = dialogName;
       },
+      getAuthDialog: () => authDialog.value,
     },
   };
 });

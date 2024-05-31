@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 import { useNuxtApp } from '#app'
 
-const { $setAuthDialog } = useNuxtApp()
+const { $setAuthDialog, $getAuthDialog } = useNuxtApp()
+
+const authDialog = $getAuthDialog()
 
 const loading = ref(false)
    
@@ -45,7 +47,7 @@ function handleClose() {
   // removeEventListener('keyup', escape)
   // backing.value.style.opacity = 0
   // setTimeout(() => {
-    authDialog.value = ''
+    $setAuthDialog('')
   // }, 500)
 }
 
