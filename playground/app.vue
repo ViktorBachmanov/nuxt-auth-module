@@ -5,10 +5,6 @@ const authDialog = useAuthStore()
 
 
 function openAuthDialog() {
-  // useAuthDialog().value = 'loginDialog'
-  // const { $setAuthDialog } = useNuxtApp()
-
-  // $setAuthDialog('loginDialog')
   authDialog.value = 'loginDialog'
 }
 
