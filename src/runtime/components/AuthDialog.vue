@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const authDialog = useAuthDialog()
+const { $setAuthDialog } = useNuxtApp()
 
 const loading = ref(false)
    
@@ -29,15 +29,15 @@ const dialogs = {
 }
 
 function handleRegister() {
-  authDialog.value = 'registerDialog'
+  $setAuthDialog('registerDialog')
 }
 
 function handleGetForgetEmail() {
-  authDialog.value = 'forgetEmailDialog'
+  $setAuthDialog('forgetEmailDialog')
 }
 
 function handleLogin() {
-  authDialog.value = 'loginDialog'
+  $setAuthDialog('loginDialog')
 }
 
 function handleClose() {
