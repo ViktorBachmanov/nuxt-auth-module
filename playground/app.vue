@@ -1,7 +1,10 @@
 <script setup>
 
 function openAuthDialog() {
-  useAuthDialog().value = 'loginDialog'
+  // useAuthDialog().value = 'loginDialog'
+  const { $setAuthDialog } = useNuxtApp()
+
+  $setAuthDialog('loginDialog')
 }
 
 function handleToggleTheme() {
