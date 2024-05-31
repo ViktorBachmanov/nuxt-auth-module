@@ -40,6 +40,6 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: "vue-lib-vb-1",
     });
 
-    addImportsDir(resolver.resolve("runtime/composables"));
+    // addImportsDir(resolver.resolve("runtime/composables"));
   },
 });

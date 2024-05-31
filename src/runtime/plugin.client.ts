@@ -1,10 +1,9 @@
-import { defineNuxtPlugin } from "#app";
-import { useAuthDialog } from "./composables/useAuthDialog";
+import { defineNuxtPlugin, useState } from "#app";
 
 export default defineNuxtPlugin((_nuxtApp) => {
   console.log("Plugin injected by my-module!");
 
-  const authDialog = useAuthDialog();
+  const authDialog = useState("authDialog", () => "");
 
   return {
     provide: {
