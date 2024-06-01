@@ -50,6 +50,6 @@ export default defineNuxtModule<ModuleOptions>({
       from: resolver.resolve("runtime/composables/useAuthDialog"), // path of composable
     });
 
-    addImportsDir(resolver.resolve("runtime/utils"));
+    // addImportsDir(resolver.resolve("runtime/utils"));
   },
 });
