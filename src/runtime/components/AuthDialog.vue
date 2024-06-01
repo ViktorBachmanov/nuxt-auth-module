@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
-import { useAuthStore } from '#imports'
+// import { useAuthStore } from '#imports'
+import { useAuthDialog } from '#imports'
+
 
 // import 
 // import { useNuxtApp } from '#app'
@@ -8,7 +10,8 @@ import { useAuthStore } from '#imports'
 // const { $setAuthDialog, $getAuthDialog } = useNuxtApp()
 
 // const authDialog = $getAuthDialog()
-const authDialog = useAuthStore()
+// const authDialog = useAuthStore()
+const authDialog = useAuthDialog()
 
 const loading = ref(false)
    
@@ -67,7 +70,7 @@ function handleClose() {
 <template>
   <Transition>
     <div 
-      v-if="authDialog.value"
+      v-if="authDialog"
       class="fixed inset-0 bg-gray-500/50 flex items-center justify-center"
       style="z-index: 51"
     >
@@ -76,7 +79,7 @@ function handleClose() {
         class="relative bg-white dark:bg-slate-800 rounded-[1.5em] px-4 py-9 sm:px-[100px] w-[580px] max-w-[100vw] max-h-[100vh]" 
       >
         <header class="font-semibold text-2xl">
-          {{ dialogs[authDialog.value].title }}
+          {{ dialogs[authDialog].title }}
         </header>
 
         <button 
@@ -90,7 +93,7 @@ function handleClose() {
 
         <Transition mode="out-in">
           <component 
-            :is="dialogs[authDialog.value].comp" 
+            :is="dialogs[authDialog].comp" 
             @go-to-register="handleRegister"
             v-model="loading"
           /> 

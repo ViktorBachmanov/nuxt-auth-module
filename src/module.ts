@@ -4,6 +4,7 @@ import {
   createResolver,
   addComponent,
   addComponentsDir,
+  addImports,
   addImportsDir,
   installModule,
 } from "@nuxt/kit";
@@ -44,7 +45,14 @@ export default defineNuxtModule<ModuleOptions>({
     // await installModule("@pinia/nuxt");
 
     // addImportsDir(resolver.resolve("runtime/composables"));
-    addImportsDir(resolver.resolve("runtime/stores"));
+
+    // addImportsDir(resolver.resolve("runtime/stores"));
+    addImports({
+      name: "useAuthDialog", // name of the composable to be used
+      as: "useAuthDialog",
+      from: resolver.resolve("runtime/composables/useAuthDialog"), // path of composable
+    });
+
     addImportsDir(resolver.resolve("runtime/utils"));
   },
 });

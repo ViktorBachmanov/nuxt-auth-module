@@ -1,8 +1,10 @@
 <script setup>
-import { useAuthStore } from '#imports'
+// import { useAuthStore } from '#imports'
+import { useAuthDialog } from '#imports'
 import { backendFetch, backendFetchXSRF } from '#imports'
 
-const authDialog = useAuthStore()
+// const authDialog = useAuthStore()
+const authDialog = useAuthDialog()
 
 
 function openAuthDialog() {
