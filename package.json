@@ -35,7 +35,7 @@
   "dependencies": {
     "@nuxt/kit": "^3.11.2",
     "@pinia/nuxt": "^0.5.1",
-    "@vbachm/vue-lib": "^0.0.1",
+    "@vbachm/vue-lib": "^0.0.4",
     "pinia": "^2.1.7"
   },
   "devDependencies": {

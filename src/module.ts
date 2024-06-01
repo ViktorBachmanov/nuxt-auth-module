@@ -36,8 +36,8 @@ export default defineNuxtModule<ModuleOptions>({
 
     // From a library
     addComponent({
-      name: "VBCheckbox", // name of the component to be used in vue templates
-      export: "VBCheckbox", // (optional) if the component is a named (rather than default) export
+      name: "CheckboxVB", // name of the component to be used in vue templates
+      export: "CheckboxVB", // (optional) if the component is a named (rather than default) export
       filePath: "@vbachm/vue-lib",
     });
 

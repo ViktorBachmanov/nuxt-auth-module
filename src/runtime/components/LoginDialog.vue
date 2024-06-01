@@ -19,7 +19,7 @@ function handleRegister() {
 
     <div style="border: 1px solid magenta">
       <label>
-        <VBCheckbox v-model="checked" />
+        <CheckboxVB v-model="checked" />
         Test checkbox
       </label>
     </div>
