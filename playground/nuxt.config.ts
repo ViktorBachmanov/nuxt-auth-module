@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ["../src/module", "@pinia/nuxt"],
+  modules: ["../src/module"],
   myModule: {},
   devtools: { enabled: true },
   postcss: {
@@ -9,7 +9,4 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
-  // alias: {
-  //   pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs",
-  // },
 });

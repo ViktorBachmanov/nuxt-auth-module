@@ -42,11 +42,8 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: "@vbachm/vue-lib",
     });
 
-    // await installModule("@pinia/nuxt");
-
     // addImportsDir(resolver.resolve("runtime/composables"));
 
-    // addImportsDir(resolver.resolve("runtime/stores"));
     addImports({
       name: "useAuthDialog", // name of the composable to be used
       as: "useAuthDialog",
