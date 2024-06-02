@@ -42,6 +42,12 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: "@vbachm/vue-lib",
     });
 
+    addComponent({
+      name: "InputVB", // name of the component to be used in vue templates
+      export: "InputVB", // (optional) if the component is a named (rather than default) export
+      filePath: "@vbachm/vue-lib",
+    });
+
     // addImportsDir(resolver.resolve("runtime/composables"));
 
     addImports({

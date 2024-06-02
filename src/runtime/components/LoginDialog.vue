@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import '@vbachm/vue-lib/style.css'
 
 const checked = ref(false)
 
@@ -10,6 +11,8 @@ const emit = defineEmits(['goToRegister'])
 function handleRegister() {
   emit('goToRegister')
 }
+
+const email = ref('')
 </script>
 
 
@@ -17,11 +20,18 @@ function handleRegister() {
   <div>
     <h2>Login Dialog</h2>
 
+    <InputVB 
+      type="email"
+      placeholder="Email"
+      v-model="email"
+    />
+
     <div style="border: 1px solid magenta">
-      <label>
-        <CheckboxVB v-model="checked" />
-        Test checkbox
-      </label>
+        <CheckboxVB 
+          v-model="checked" 
+          postfixLabel="Test checkbox"
+          id="rememberCheckbox"
+        />
     </div>
 
     <div
