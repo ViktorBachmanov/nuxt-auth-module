@@ -6,6 +6,9 @@ import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
 import { IconTelegram, IconUser } from '@vbachm/vue-icons-plasm'
 
+
+const config = useRuntimeConfig()
+
 const checked = ref(false)
 
 const loading = defineModel()
@@ -18,7 +21,8 @@ function handleRegister() {
 
 const email = ref('')
 
-const config = useRuntimeConfig()
+const error = ref('some error')
+
 </script>
 
 
@@ -43,12 +47,15 @@ const config = useRuntimeConfig()
 
     <InputVB 
       type="email"
-      placeholder="Email"
+      placeholder="Ваш e-mail"
       v-model="email"
       class="!w-full"
+      wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
+      colorLight="#6F46C4"
+      :error="error"
     >
       <template #prefixIcon>
-        <IconUser />
+        <IconUser class="w-[20px]"/>
       </template>
     </InputVB>
 
