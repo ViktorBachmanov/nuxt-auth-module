@@ -48,6 +48,12 @@ export default defineNuxtModule<ModuleOptions>({
       filePath: "@vbachm/vue-lib",
     });
 
+    // addComponent({
+    //   name: "IconTelegram", // name of the component to be used in vue templates
+    //   export: "IconTelegram", // (optional) if the component is a named (rather than default) export
+    //   filePath: "@vbachm/vue-icons-plasm",
+    // });
+
     // addImportsDir(resolver.resolve("runtime/composables"));
 
     addImports({

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRuntimeConfig } from '#app'
 import '@vbachm/vue-lib/style.css'
+import { IconTelegram } from '@vbachm/vue-icons-plasm'
 
 const checked = ref(false)
 
