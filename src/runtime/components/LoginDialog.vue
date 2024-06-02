@@ -24,14 +24,15 @@ const email = ref('')
       type="email"
       placeholder="Email"
       v-model="email"
+      class="!w-full"
     />
 
     <div style="border: 1px solid magenta">
-        <CheckboxVB 
-          v-model="checked" 
-          postfixLabel="Test checkbox"
-          id="rememberCheckbox"
-        />
+      <CheckboxVB 
+        v-model="checked" 
+        postfixLabel="Test checkbox"
+        id="rememberCheckbox"
+      />
     </div>
 
     <div
