@@ -1,8 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import { useRuntimeConfig } from '#app'
+
+import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
-import { IconTelegram } from '@vbachm/vue-icons-plasm'
+import { IconTelegram, IconUser } from '@vbachm/vue-icons-plasm'
 
 const checked = ref(false)
 
@@ -44,7 +46,11 @@ const config = useRuntimeConfig()
       placeholder="Email"
       v-model="email"
       class="!w-full"
-    />
+    >
+      <template #prefixIcon>
+        <IconUser />
+      </template>
+    </InputVB>
 
     <CheckboxVB 
       v-model="checked" 

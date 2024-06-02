@@ -36,17 +36,17 @@ export default defineNuxtModule<ModuleOptions>({
     });
 
     // From a library
-    addComponent({
-      name: "CheckboxVB", // name of the component to be used in vue templates
-      export: "CheckboxVB", // (optional) if the component is a named (rather than default) export
-      filePath: "@vbachm/vue-lib",
-    });
+    // addComponent({
+    //   name: "CheckboxVB", // name of the component to be used in vue templates
+    //   export: "CheckboxVB", // (optional) if the component is a named (rather than default) export
+    //   filePath: "@vbachm/vue-lib",
+    // });
 
-    addComponent({
-      name: "InputVB", // name of the component to be used in vue templates
-      export: "InputVB", // (optional) if the component is a named (rather than default) export
-      filePath: "@vbachm/vue-lib",
-    });
+    // addComponent({
+    //   name: "InputVB", // name of the component to be used in vue templates
+    //   export: "InputVB", // (optional) if the component is a named (rather than default) export
+    //   filePath: "@vbachm/vue-lib",
+    // });
 
     // addComponent({
     //   name: "IconTelegram", // name of the component to be used in vue templates
