@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import { useRuntimeConfig } from '#app'
 import '@vbachm/vue-lib/style.css'
 
 const checked = ref(false)
@@ -13,12 +14,29 @@ function handleRegister() {
 }
 
 const email = ref('')
+
+const config = useRuntimeConfig()
 </script>
 
 
 <template>
   <div>
-    <h2>Login Dialog</h2>
+    <div class="text-sm text-[#707070] mt-3">
+      Быстрая регистрация через нашего бота!
+    </div>
+
+    <NuxtLink 
+      class="disabled:opacity-75 w-full mt-5 mb-6 flex items-center justify-center gap-x-4 p-4 font-bold text-lg rounded-[20px] bg-black text-white dark:bg-zinc-800"
+      :to="`https://t.me/${config.public.cutsystemsBot}`"
+      target="_blank"
+    >
+      <IconTelegram />
+      Телеграмм бот
+    </NuxtLink>
+
+    <div class="border-t border-[#EAEAEA] py-4 text-sm text-[#707070]">
+      Введите данные для авторизации
+    </div>
 
     <InputVB 
       type="email"
@@ -27,13 +45,11 @@ const email = ref('')
       class="!w-full"
     />
 
-    <div style="border: 1px solid magenta">
-      <CheckboxVB 
-        v-model="checked" 
-        postfixLabel="Test checkbox"
-        id="rememberCheckbox"
-      />
-    </div>
+    <CheckboxVB 
+      v-model="checked" 
+      postfixLabel="Test checkbox"
+      id="rememberCheckbox"
+    />
 
     <div
       @click="handleRegister"
