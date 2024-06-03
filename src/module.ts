@@ -62,6 +62,12 @@ export default defineNuxtModule<ModuleOptions>({
       from: resolver.resolve("runtime/composables/useAuthDialog"), // path of composable
     });
 
+    addImports({
+      name: "useUser", // name of the composable to be used
+      as: "useUser",
+      from: resolver.resolve("runtime/composables/useUser"), // path of composable
+    });
+
     // addImportsDir(resolver.resolve("runtime/utils"));
 
     // addPlugin(resolver.resolve("./runtime/toaster.client"));

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRuntimeConfig } from '#app'
+import { useUser } from '#imports'
 
 const { $toast } = useNuxtApp();
 
@@ -22,20 +23,23 @@ function handleRegister() {
 const email = ref('')
 
 const error = ref('')
+const anotherError = ref('')
 
 const password = ref('')
 
 const remember = ref(false)
 
+const user = useUser()
+
 
 async function handleLogin() {
   loading.value = true
 
-  await new Promise((r) => setTimeout(r, 3000))
-  loading.value = false
-  $toast.success('Успешный тест')
-  emit('close')
-  return
+  // await new Promise((r) => setTimeout(r, 3000))
+  // loading.value = false
+  // $toast.success('Успешный тест')
+  // emit('close')
+  // return
 
   await backendFetch('/sanctum/csrf-cookie')
 
@@ -62,10 +66,10 @@ async function handleLogin() {
     switch (error.status) {
       case 401:
       case 422:
-        errors.value.push(error.data.email || error.data.errors?.email[0] || error.data.errors?.password)
+        error.value = (error.data.email || error.data.errors?.email[0] || error.data.errors?.password[0])
         break;
       default:
-        otherError.value = error.data.message
+        anotherError.value = error.data.message
         break;
     }
   }
@@ -153,6 +157,13 @@ function togglePasswordInputType() {
       class="mt-3 ml-3"
       borderClass="dark:text-gray-500"
     />
+
+    <div
+      v-if="anotherError"
+      class="text-red-500 mt-4"
+    >
+      {{ anotherError }}
+    </div>
 
     <button 
       type="button"
