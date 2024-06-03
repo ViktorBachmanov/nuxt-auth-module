@@ -22,7 +22,7 @@ function handleRegister() {
 
 const email = ref('')
 
-const credentialsError = ref('')
+const credentialsError = ref('email error')
 const anotherError = ref('')
 
 const password = ref('')
@@ -64,6 +64,8 @@ async function handleLogin() {
   } catch (error) {
     // console.log('[error data]', error.data)
     // console.log('[error status]', error.status)
+    $toast.error('Ошибка')
+
     switch (error.status) {
       case 401:
       case 422:
