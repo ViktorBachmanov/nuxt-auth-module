@@ -11,8 +11,6 @@ import { IconTelegram, IconUser, IconUnlock, IconEyeSlash } from '@vbachm/vue-ic
 
 const config = useRuntimeConfig()
 
-const checked = ref(false)
-
 const loading = defineModel()
 
 const emit = defineEmits(['close', 'goToRegister', 'goToForgetEmail'])
@@ -27,12 +25,16 @@ const error = ref('')
 
 const password = ref('')
 
+const remember = ref(false)
+
+
 async function handleLogin() {
   loading.value = true
 
   await new Promise((r) => setTimeout(r, 3000))
   loading.value = false
   $toast.success('Успешный тест')
+  emit('close')
   return
 
   await backendFetch('/sanctum/csrf-cookie')
@@ -144,7 +146,7 @@ function togglePasswordInputType() {
     </div>
 
     <CheckboxVB 
-      v-model="checked" 
+      v-model="remember" 
       postfixLabel="Оставаться авторизованным после входа"
       id="rememberCheckbox"
       labelClass="text-sm font-normal"

@@ -93,6 +93,7 @@ function handleClose() {
         <Transition mode="out-in">
           <component 
             :is="dialogs[authDialog].comp" 
+            @close="handleClose"
             @go-to-register="handleRegister"
             v-model="loading"
           /> 
