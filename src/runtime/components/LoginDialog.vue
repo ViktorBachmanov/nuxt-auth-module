@@ -133,7 +133,7 @@ function togglePasswordInputType() {
       :type="passwordInputType"
       placeholder="Пароль"
       v-model:value="password"
-      class="!w-full"
+      class="!w-full mt-2"
       wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
       colorLight="#6F46C4"
       bgColorDark="#1e293b"
