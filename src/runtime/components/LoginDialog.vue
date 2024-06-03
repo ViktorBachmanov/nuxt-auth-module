@@ -2,6 +2,9 @@
 import { ref } from 'vue'
 import { useRuntimeConfig } from '#app'
 
+import { useToast } from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-sugar.css";
+
 import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
 import { IconTelegram, IconUser, IconUnlock, IconEyeSlash } from '@vbachm/vue-icons-plasm'
@@ -24,6 +27,51 @@ const email = ref('')
 const error = ref('')
 
 const password = ref('')
+
+const $toast = useToast()
+
+async function handleLogin() {
+  loading.value = true
+
+  await new Promise((r) => setTimeout(r, 3000))
+  loading.value = false
+  $toast.success('Успешный тест')
+  return
+
+  await backendFetch('/sanctum/csrf-cookie')
+
+  try {
+    const response = await backendFetchXSRF('/api/login', {
+      method: 'POST',
+      body: {
+        email: email.value,
+        password: password.value,
+        remember_me: remember.value,
+      },
+    })
+    $toast.success('Вы вошли')
+    // console.log('response: ', response)
+    user.value = response
+    clearError()
+    if (route.path.includes('email/verify')) {
+      window.location.reload()
+    }
+    emit('close')
+  } catch (error) {
+    // console.log('[error data]', error.data)
+    // console.log('[error status]', error.status)
+    switch (error.status) {
+      case 401:
+      case 422:
+        errors.value.push(error.data.email || error.data.errors?.email[0] || error.data.errors?.password)
+        break;
+      default:
+        otherError.value = error.data.message
+        break;
+    }
+  }
+  loading.value = false
+}
 
 const passwordInputType = ref('password')
 
