@@ -3,12 +3,12 @@ import { ref, watch } from 'vue'
 import { useRuntimeConfig, useRoute, clearError } from '#app'
 import { useUser, backendFetch, backendFetchXSRF } from '#imports'
 
-const { $toast } = useNuxtApp();
-
 import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
 import { IconTelegram, IconUser, IconUnlock, IconEyeSlash } from '@vbachm/vue-icons-plasm'
 
+
+const { $toast } = useNuxtApp();
 
 const config = useRuntimeConfig()
 

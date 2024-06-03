@@ -29,10 +29,10 @@ const dialogs = {
   //   comp: resolveComponent('AuthEmailVerificationDialog'),
   //   title: 'Подтвердите Ваш Email',
   // },
-  // forgetEmailDialog: {
-  //   comp: resolveComponent('AuthForgetEmailDialog'),
-  //   title: 'Сброс пароля',
-  // },
+  forgetEmailDialog: {
+    comp: resolveComponent('ForgetEmailDialog'),
+    title: 'Сброс пароля',
+  },
   // resetPasswordDialog: {
   //   comp: resolveComponent('AuthResetPasswordDialog'),
   //   title: 'Новый пароль',
@@ -94,6 +94,7 @@ function handleClose() {
           <component 
             :is="dialogs[authDialog].comp" 
             @close="handleClose"
+            @go-to-forget-email="handleGetForgetEmail"
             @go-to-register="handleRegister"
             v-model="loading"
           /> 
