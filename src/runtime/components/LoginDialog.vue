@@ -2,8 +2,7 @@
 import { ref } from 'vue'
 import { useRuntimeConfig } from '#app'
 
-import { useToast } from "vue-toast-notification";
-import "vue-toast-notification/dist/theme-sugar.css";
+const { $toast } = useNuxtApp();
 
 import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
@@ -27,8 +26,6 @@ const email = ref('')
 const error = ref('')
 
 const password = ref('')
-
-const $toast = useToast()
 
 async function handleLogin() {
   loading.value = true
