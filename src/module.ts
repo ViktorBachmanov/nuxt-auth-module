@@ -64,6 +64,6 @@ export default defineNuxtModule<ModuleOptions>({
 
     // addImportsDir(resolver.resolve("runtime/utils"));
 
-    addPlugin(resolver.resolve("./runtime/toaster.client"));
+    // addPlugin(resolver.resolve("./runtime/toaster.client"));
   },
 });
