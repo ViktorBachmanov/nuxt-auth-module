@@ -22,7 +22,7 @@ function handleRegister() {
 
 const email = ref('')
 
-const credentialsError = ref('email error')
+const credentialsError = ref('')
 const anotherError = ref('')
 
 const password = ref('')
