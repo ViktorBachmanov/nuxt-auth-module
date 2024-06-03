@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { useRuntimeConfig } from '#app'
+import { useRuntimeConfig, useRoute } from '#app'
 import { useUser, backendFetch, backendFetchXSRF } from '#imports'
 
 const { $toast } = useNuxtApp();
