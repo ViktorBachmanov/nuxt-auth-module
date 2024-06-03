@@ -31,6 +31,7 @@ const remember = ref(false)
 
 const user = useUser()
 
+const route = useRoute()
 
 async function handleLogin() {
   loading.value = true
