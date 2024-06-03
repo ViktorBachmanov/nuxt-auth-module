@@ -113,12 +113,12 @@ function togglePasswordInputType() {
     <InputVB 
       type="email"
       placeholder="Ваш e-mail"
-      v-model="email"
+      v-model:value="email"
       class="!w-full"
       wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
       colorLight="#6F46C4"
       bgColorDark="#1e293b"
-      :error="credentialsError"
+      v-model:error="credentialsError"
     >
       <template #prefixIcon>
         <IconUser class="w-[20px]"/>
@@ -128,7 +128,7 @@ function togglePasswordInputType() {
     <InputVB 
       :type="passwordInputType"
       placeholder="Пароль"
-      v-model="password"
+      v-model:value="password"
       class="!w-full"
       wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
       colorLight="#6F46C4"
