@@ -34,7 +34,7 @@ const user = useUser()
 const route = useRoute()
 
 watch(password, () => {
-  credentialsError = ''
+  credentialsError.value = ''
 })
 
 async function handleLogin() {
