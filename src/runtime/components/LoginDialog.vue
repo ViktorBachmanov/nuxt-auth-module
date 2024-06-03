@@ -22,7 +22,7 @@ function handleRegister() {
 
 const email = ref('')
 
-const error = ref('')
+const credentialsError = ref('')
 const anotherError = ref('')
 
 const password = ref('')
@@ -67,7 +67,7 @@ async function handleLogin() {
     switch (error.status) {
       case 401:
       case 422:
-        error.value = (error.data.email || error.data.errors?.email[0] || error.data.errors?.password[0])
+        credentialsError.value = (error.data.email || error.data.errors?.email[0] || error.data.errors?.password[0])
         break;
       default:
         anotherError.value = error.data.message
@@ -116,7 +116,7 @@ function togglePasswordInputType() {
       wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
       colorLight="#6F46C4"
       bgColorDark="#1e293b"
-      :error="error"
+      :error="credentialsError"
     >
       <template #prefixIcon>
         <IconUser class="w-[20px]"/>
@@ -131,7 +131,6 @@ function togglePasswordInputType() {
       wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
       colorLight="#6F46C4"
       bgColorDark="#1e293b"
-      :error="error"
       :errorSpace="false"
     >
       <template #prefixIcon>
