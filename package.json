@@ -1,6 +1,6 @@
 {
   "name": "@vbachm/nuxt-auth-module",
-  "version": "1.1.18",
+  "version": "1.1.19",
   "description": "Nuxt auth module",
   "repository": {
     "type": "git",
