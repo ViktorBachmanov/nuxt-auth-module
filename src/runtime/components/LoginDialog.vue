@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useRuntimeConfig, useRoute, clearError } from '#app'
 import { useUser, backendFetch, backendFetchXSRF } from '#imports'
 
@@ -32,6 +32,10 @@ const remember = ref(false)
 const user = useUser()
 
 const route = useRoute()
+
+watch(password, () => {
+  credentialsError = ''
+})
 
 async function handleLogin() {
   loading.value = true
