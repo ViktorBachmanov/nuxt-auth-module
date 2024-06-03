@@ -4,7 +4,7 @@ import { useRuntimeConfig } from '#app'
 
 import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
-import { IconTelegram, IconUser } from '@vbachm/vue-icons-plasm'
+import { IconTelegram, IconUser, IconUnlock, IconEyeSlash } from '@vbachm/vue-icons-plasm'
 
 
 const config = useRuntimeConfig()
@@ -21,7 +21,17 @@ function handleRegister() {
 
 const email = ref('')
 
-const error = ref('some error')
+const error = ref('')
+
+const password = ref('')
+
+const passwordInputType = ref('password')
+
+function togglePasswordInputType() {
+  passwordInputType.value = passwordInputType.value == 'password'
+    ? 'text'
+    : 'password'
+}
 
 </script>
 
@@ -52,10 +62,30 @@ const error = ref('some error')
       class="!w-full"
       wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
       colorLight="#6F46C4"
+      bgColorDark="#1e293b"
       :error="error"
     >
       <template #prefixIcon>
         <IconUser class="w-[20px]"/>
+      </template>
+    </InputVB>
+
+    <InputVB 
+      :type="passwordInputType"
+      placeholder="Пароль"
+      v-model="password"
+      class="!w-full"
+      wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
+      colorLight="#6F46C4"
+      bgColorDark="#1e293b"
+      :error="error"
+    >
+      <template #prefixIcon>
+        <IconUnlock class="w-[20px]" />
+      </template>
+
+      <template #postfixIcon>
+        <IconEyeSlash class="w-[20px] cursor-pointer" @click="togglePasswordInputType" />
       </template>
     </InputVB>
 
