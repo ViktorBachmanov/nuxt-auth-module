@@ -60,9 +60,9 @@ async function handleSubmit() {
   } catch (error) {
     switch (error.status) {
       case 422:
-        nameErrors.value = error.data?.errors?.name?.[0] || ''
-        emailErrors.value = error.data?.errors?.email?.[0] || ''
-        passwordErrors.value = error.data?.errors?.password?.[0] || ''
+        nameError.value = error.data?.errors?.name?.[0] || ''
+        emailError.value = error.data?.errors?.email?.[0] || ''
+        passwordError.value = error.data?.errors?.password?.[0] || ''
         break;
       default:
         otherError.value = error.data?.message
