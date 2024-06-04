@@ -65,9 +65,9 @@ async function handleSubmit() {
     // console.log('[error status]', error.status)
     switch (error.status) {
       case 422:
-        emailError.value = error.data.errors?.email || ''
-        passwordError.value = error.data.errors?.password || ''
-        passwordConfirmError.value = error.data.errors?.password_confirmation || ''
+        emailError.value = error.data.errors?.email[0] || ''
+        passwordError.value = error.data.errors?.password[0] || ''
+        // passwordConfirmError.value = error.data.errors?.password_confirmation[0] || ''
         break;
       default:
         // errors.value.push(error.data.email || error.data.errors?.email[0])
@@ -148,7 +148,7 @@ function togglePasswordConfirmInputType() {
         wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
         colorLight="#6F46C4"
         bgColorDark="#1e293b"
-        v-model:error="passwordConfirmError"
+        :errorSpace="false"
       >
         <template #prefixIcon>
           <IconUnlock class="w-[20px]" />
