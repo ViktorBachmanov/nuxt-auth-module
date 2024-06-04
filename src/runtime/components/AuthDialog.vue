@@ -25,10 +25,10 @@ const dialogs = {
     comp: resolveComponent('RegisterDialog'),
     title: 'Регистрация',
   },
-  // emailVerificationDialog: {
-  //   comp: resolveComponent('AuthEmailVerificationDialog'),
-  //   title: 'Подтвердите Ваш Email',
-  // },
+  emailVerificationDialog: {
+    comp: resolveComponent('EmailVerificationDialog'),
+    title: 'Подтвердите Ваш Email',
+  },
   forgetEmailDialog: {
     comp: resolveComponent('ForgetEmailDialog'),
     title: 'Сброс пароля',

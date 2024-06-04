@@ -11,6 +11,10 @@ function openAuthDialog() {
   authDialog.value = 'loginDialog'
 }
 
+function openEmailVerificationDialog() {
+  authDialog.value = 'emailVerificationDialog'
+}
+
 function handleToggleTheme() {
   // const documentEl = document?.documentElement.classList.add(ThemeVal.Dark)
   document?.documentElement.classList.toggle('dark')
@@ -33,6 +37,14 @@ async function handleTestRequest() {
     @click="openAuthDialog"
   >
     Open auth dialog
+  </button>
+
+  <br>
+
+  <button
+    @click="openEmailVerificationDialog"
+  >
+    Open email verification dialog
   </button>
 
   <br>

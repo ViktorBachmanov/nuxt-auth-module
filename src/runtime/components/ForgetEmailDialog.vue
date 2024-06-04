@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { backendFetch, backendFetchXSRF } from '#imports'
 
-import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
+import { InputVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
 import { IconUser } from '@vbachm/vue-icons-plasm'
 
