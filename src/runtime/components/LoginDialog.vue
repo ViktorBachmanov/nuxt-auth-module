@@ -119,7 +119,7 @@ function togglePasswordInputType() {
       placeholder="Ваш e-mail"
       v-model:value="email"
       class="!w-full"
-      wrapperClass="!border-[#D9D9D9] dark:!border-gray-400 font-['Manrope', system-ui]"
+      wrapperClass="!border-[#D9D9D9] dark:!border-gray-400 !font-['Manrope', system-ui]"
       colorLight="#6F46C4"
       bgColorDark="#1e293b"
       v-model:error="credentialsError"
