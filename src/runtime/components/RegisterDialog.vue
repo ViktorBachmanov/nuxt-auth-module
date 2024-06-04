@@ -65,7 +65,7 @@ async function handleSubmit() {
         passwordError.value = error.data?.errors?.password?.[0] || ''
         break;
       default:
-        otherError.value = error.data?.message
+        anotherError.value = error.data?.message
         $toast.error('Ошибка')
         break;
     }
@@ -114,7 +114,7 @@ function togglePasswordConfirmInputType() {
         type="email"
         placeholder="Ваш e-mail"
         v-model:value="email"
-        class="!w-full"
+        class="!w-full mt-1"
         wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
         colorLight="#6F46C4"
         bgColorDark="#1e293b"
@@ -129,7 +129,7 @@ function togglePasswordConfirmInputType() {
         :type="passwordInputType"
         placeholder="Пароль"
         v-model:value="password"
-        class="!w-full mt-2"
+        class="!w-full mt-1"
         wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
         colorLight="#6F46C4"
         bgColorDark="#1e293b"
@@ -148,7 +148,7 @@ function togglePasswordConfirmInputType() {
         :type="passwordConfirmInputType"
         placeholder="Подтвердите пароль"
         v-model:value="passwordConfirm"
-        class="!w-full mt-2"
+        class="!w-full mt-1"
         wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
         colorLight="#6F46C4"
         bgColorDark="#1e293b"
@@ -173,7 +173,8 @@ function togglePasswordConfirmInputType() {
       <button 
         type="button"
         @click="handleSubmit"
-        class="mt-10 flex items-center rounded-[20px] w-full justify-center border-none p-5 bg-black dark:bg-zinc-800 shadow-none font-bold max-w-full text-lg text-white"
+        class="mt-10 mb-2 flex items-center rounded-[20px] w-full justify-center border-none p-5 
+          bg-black dark:bg-zinc-800 shadow-none font-bold max-w-full text-lg text-white"
       >
         Регистрация
       </button>
