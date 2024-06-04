@@ -33,10 +33,10 @@ const dialogs = {
     comp: resolveComponent('ForgetEmailDialog'),
     title: 'Сброс пароля',
   },
-  // resetPasswordDialog: {
-  //   comp: resolveComponent('AuthResetPasswordDialog'),
-  //   title: 'Новый пароль',
-  // },
+  resetPasswordDialog: {
+    comp: resolveComponent('ResetPasswordDialog'),
+    title: 'Новый пароль',
+  },
 }
 
 function handleRegister() {
@@ -96,6 +96,7 @@ function handleClose() {
             @close="handleClose"
             @go-to-forget-email="handleGetForgetEmail"
             @go-to-register="handleRegister"
+            @go-to-login="handleLogin"
             v-model="loading"
           /> 
         </Transition>  

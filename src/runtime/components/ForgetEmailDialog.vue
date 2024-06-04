@@ -1,8 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
-import { IconUser } from '@vbachm/vue-icons-plasm'
 import { backendFetch, backendFetchXSRF } from '#imports'
+
+import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
+import '@vbachm/vue-lib/style.css'
+import { IconUser } from '@vbachm/vue-icons-plasm'
 
 
 const { $toast } = useNuxtApp();
