@@ -65,13 +65,13 @@ async function handleSubmit() {
     // console.log('[error status]', error.status)
     switch (error.status) {
       case 422:
-        emailError.value = error.data.errors?.email[0] || ''
-        passwordError.value = error.data.errors?.password[0] || ''
+        emailError.value = error.data.errors?.email?.[0] || ''
+        passwordError.value = error.data.errors?.password?.[0] || ''
         // passwordConfirmError.value = error.data.errors?.password_confirmation[0] || ''
         break;
       default:
         // errors.value.push(error.data.email || error.data.errors?.email[0])
-        anotherError.value = error.data.message
+        anotherError.value = error.data?.message
         $toast.error('Ошибка')
         break;
     }
