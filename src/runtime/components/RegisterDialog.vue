@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import { backendFetch, backendFetchXSRF } from '#imports'
-import { InputVB, CheckboxVB } from '@vbachm/vue-lib'
+import { useUser, backendFetch, backendFetchXSRF } from '#imports'
+import { InputVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
 import { IconUser, IconUnlock, IconEyeSlash } from '@vbachm/vue-icons-plasm'
 
@@ -29,6 +29,8 @@ const loading = defineModel()
 
 const emit = defineEmits(['close'])
 
+const user = useUser()
+
 async function handleSubmit() {
   resetErrors()
   
@@ -52,6 +54,9 @@ async function handleSubmit() {
         password_confirmation: passwordConfirm.value,
       },
     })
+    
+    user.value = response
+
     $toast.info('Вам на почту отправлена ссылка для подтверждения email', {
       dismissible: true,
       duration: 0,
