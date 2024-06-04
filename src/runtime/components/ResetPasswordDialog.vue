@@ -142,7 +142,7 @@ function togglePasswordConfirmInputType() {
 
       <InputVB 
         :type="passwordConfirmInputType"
-        placeholder="Подтверждение пароля"
+        placeholder="Подтвердите пароль"
         v-model:value="passwordConfirm"
         class="!w-full mt-2"
         wrapperClass="!border-[#D9D9D9] dark:!border-gray-400"
