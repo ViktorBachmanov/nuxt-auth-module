@@ -49,10 +49,10 @@ async function handleSubmit() {
     // console.log('[error status]', error.status)
     switch (error.status) {
       case 422:
-        emailError.value = error.data.email || error.data.errors?.email[0]
+        emailError.value = error.data?.email || error.data.errors?.email?.[0]
         break;
       default:
-        anotherError.value = error.data.message
+        anotherError.value = error.data?.message
         break;
     }
   }

@@ -73,10 +73,10 @@ async function handleLogin() {
     switch (error.status) {
       case 401:
       case 422:
-        credentialsError.value = (error.data.email || error.data.errors?.email[0] || error.data.errors?.password[0])
+        credentialsError.value = (error.data?.email || error.data?.errors?.email?.[0] || error.data?.errors?.password?.[0])
         break;
       default:
-        anotherError.value = error.data.message
+        anotherError.value = error.data?.message
         break;
     }
   }
