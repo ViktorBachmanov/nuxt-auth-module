@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute } from '#app'
+import { backendFetch, backendFetchXSRF } from '#imports'
 
 import { InputVB } from '@vbachm/vue-lib'
 import '@vbachm/vue-lib/style.css'
