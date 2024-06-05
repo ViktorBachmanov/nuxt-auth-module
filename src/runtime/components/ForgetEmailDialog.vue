@@ -65,7 +65,7 @@ async function handleSubmit() {
 
 <template>  
   <div>
-    <div class="border-t border-[#EAEAEA] py-4 text-sm text-[#707070]">
+    <div class="py-4 text-sm text-[#707070]">
       Введите email для получения ссылки на сброс пароля
     </div>
 
