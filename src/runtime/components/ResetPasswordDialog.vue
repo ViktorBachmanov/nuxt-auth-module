@@ -70,8 +70,6 @@ async function handleSubmit() {
         // passwordConfirmError.value = error.data.errors?.password_confirmation[0] || ''
         break;
       default:
-        emailError.value = error.data?.errors?.email?.[0] || ''
-        passwordError.value = error.data?.errors?.password?.[0] || ''
         anotherError.value = error.data?.message
         $toast.error('Ошибка')
         break;

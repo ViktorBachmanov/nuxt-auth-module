@@ -123,6 +123,7 @@ function togglePasswordInputType() {
       colorLight="#6F46C4"
       bgColorDark="#1e293b"
       v-model:error="credentialsError"
+      inputFontFamily="'Manrope', system-ui"
     >
       <template #prefixIcon>
         <IconUser class="w-[20px]"/>
