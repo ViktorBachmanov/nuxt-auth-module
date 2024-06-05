@@ -175,14 +175,15 @@ function togglePasswordInputType() {
     <button 
       type="button"
       @click="handleLogin"
-      class="mt-7 flex items-center rounded-[20px] w-full justify-center border-none p-5 bg-black dark:bg-zinc-800 shadow-none font-bold max-w-full text-lg text-white"
+      class="mt-7 mb-3 flex items-center rounded-[20px] w-full justify-center border-none p-5 bg-black dark:bg-zinc-800 shadow-none font-bold max-w-full text-lg text-white"
     >
         Продолжить
     </button>
 
     <div
+      v-if="false"
       @click="handleRegister"
-      class="text-center text-sm font-semibold cursor-pointer mt-6"
+      class="text-center text-sm font-semibold cursor-pointer mt-3"
     >
       Нет аккаунта?
     </div>
