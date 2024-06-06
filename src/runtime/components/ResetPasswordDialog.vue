@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { useRoute } from '#app'
+import { useRoute, navigateTo } from '#app'
 import { backendFetch, backendFetchXSRF } from '#imports'
 
 import { InputVB } from '@vbachm/vue-lib'
@@ -59,7 +59,8 @@ async function handleSubmit() {
     })
     $toast.success('Новый пароль установлен')
     // console.log('response: ', response)
-    emit('goToLogin')
+    // emit('goToLogin')
+    navigateTo('/')
   } catch (error) {
     // console.log('[error data]', error.data)
     // console.log('[error status]', error.status)
