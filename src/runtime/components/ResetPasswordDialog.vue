@@ -59,7 +59,7 @@ async function handleSubmit() {
     })
     $toast.success('Новый пароль установлен')
     // console.log('response: ', response)
-    // emit('goToLogin')
+    emit('close')
     navigateTo('/')
   } catch (error) {
     // console.log('[error data]', error.data)
